@@ -1,0 +1,23 @@
+{
+  "name": "group-vars-init",
+  "entryPoint": "/group-vars-init.js",
+  "points": {
+    "query": {
+      "field": {
+        "property": "type",
+        "text": "OBJECT_ANALOG_INPUT"
+      }
+    },
+    "groups": {
+      "keys": [
+        "parent_name"
+      ]
+    },
+    "groupVariables": [
+      {
+        "label": "testVar"
+      }
+    ]
+  },
+  "mode": "MODE_ON_REQUEST"
+}

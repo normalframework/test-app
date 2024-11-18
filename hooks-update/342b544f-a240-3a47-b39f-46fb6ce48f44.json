@@ -1,0 +1,47 @@
+{
+  "name": "mode-switch",
+  "entryPoint": "/mode-switch.js",
+  "points": {
+    "layer": "default",
+    "query": {
+      "or": [
+        {
+          "field": {
+            "property": "class",
+            "text": "occupancy-sensor"
+          }
+        },
+        {
+          "field": {
+            "property": "class",
+            "text": "zone-air-temp-occ-heating-sp"
+          }
+        }
+      ]
+    },
+    "groupFunction": "function groupFn(point) {\n  if (point.attrs.class == \"occupancy-sensor\") {\n    return  point.attrs.spaceRef ;\n  } else {\n    return point.attrs.equipRef\n  }  \n}",
+    "annotations": [
+      {
+        "layer": "model",
+        "fieldName": "spaceRef",
+        "path": [
+          {
+            "sourceProperty": "equipRef",
+            "targetProperty": "id",
+            "valueProperty": "spaceRef"
+          }
+        ]
+      }
+    ],
+    "groupVariables": [
+      {
+        "label": "SetbackState"
+      }
+    ],
+    "labelAttribute": "attrs.class"
+  },
+  "schedule": {
+    "rrule": "DTSTART:20241114T050000Z\nRRULE:FREQ=MINUTELY;INTERVAL=1"
+  },
+  "mode": "MODE_SCHEDULED"
+}

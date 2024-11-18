@@ -1,0 +1,17 @@
+{
+  "name":  "large",
+  "entryPoint":  "/large.js",
+  "points":  {
+    "layer":  "hpl:fox:1",
+    "query":  {
+      "field":  {
+        "text":  "analog output"
+      }
+    },
+    "groups":  {}
+  },
+  "schedule":  {
+    "rrule":  "DTSTART:20241008T040000Z\nRRULE:FREQ=SECONDLY;INTERVAL=10"
+  },
+  "mode":  "MODE_ON_REQUEST"
+}
